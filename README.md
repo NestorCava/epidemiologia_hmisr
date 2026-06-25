@@ -1,6 +1,6 @@
-## NODO EPIDEMIOLÓGICO DEL HOSPITAL MATERNO INFANTIL "SAN ROQUE"
+# NODO EPIDEMIOLÓGICO DEL HOSPITAL MATERNO INFANTIL "SAN ROQUE"
 
-### Estructura de archivos
+## Estructura de archivos
 
 ```text
 epidemiologia_hsr/
@@ -19,7 +19,7 @@ epidemiologia_hsr/
 └── README.md
 ```
 
-## Descripción
+### Descripción
 
 - **data/raw/**: datos originales exportados desde Epi Info.
 - **data/processed/**: datos transformados y listos para análisis.
