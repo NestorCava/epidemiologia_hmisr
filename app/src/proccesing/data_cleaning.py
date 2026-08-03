@@ -1,5 +1,6 @@
 from datetime import datetime
 from pathlib import Path
+import os
 
 import pandas as pd
 
@@ -118,5 +119,20 @@ def inser_epi_year(
     return df
 
 
-def save_epi_year(df):
-    pass
+def save_epi_year(df: pd.DataFrame | None = None) -> bool:
+    # Si no se envía nada, se inicializa el DataFrame vacío de forma segura
+    if df is None:
+        return False
+
+    # Define el nombre del archivo
+    ARCHIVO = "epi_2025.csv"  # Dataset
+    DIRECTORIO = Path(__file__).resolve().parent.parent / "data" / "processed" / ARCHIVO
+    # archivo = 'datos.csv'
+
+    # Comprueba si el archivo ya existe
+    archivo_existe = os.path.exists(DIRECTORIO)
+
+    # Guarda o agrega datos
+    df.to_csv(DIRECTORIO, mode='a', index=False, header=not archivo_existe, encoding='utf-8')
+    
+    return True

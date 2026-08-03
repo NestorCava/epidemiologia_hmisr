@@ -4,3 +4,5 @@
 # Ignorar datos crudos
 data/raw/
 
+# Objetos de Python y cachés
+**/__pycache__/
