@@ -30,5 +30,18 @@ if archivo_subido is not None:
     df = pd.read_csv(archivo_subido)
     st.dataframe(df)
 
+    st.subheader("Cantidad de Consultas por Semana Epidemiológica")
+    st.bar_chart(
+        df["SEMEPI"].value_counts(),
+        x_label="Semana Epidemiológica",
+        y_label="Cantidad de Consultas",
+    )
+    st.bar_chart(df["DIAGNOSTIC"].value_counts())
+    st.bar_chart(df["DIA"].value_counts())
+
+    df_respiratorias = df[(df["DIAGNOSTIC"] == "RESPIRATORIASUP")]
+    # st.dataframe(df_respiratorias)
+    st.bar_chart(df_respiratorias["SEMEPI"].value_counts())
+    # st.bar_chart(df[(df["DIAGNOSTIC"] == "RESPIRATORIASUP")])
 # Mostrar como tabla interactiva
 # st.dataframe(df)

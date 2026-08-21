@@ -69,4 +69,4 @@ Para el desarrollo se utiliza un entorno virtual, se deja en el archivo [require
 * Activar el entorno virtual: `source .venv\Scripts\activate`
 * Instalar desde requirement: `pip install -r requirements.txt`
 
-Para iniciar el servidor de desarrollo `Streamlit` en local debemos ejecutar: `streamlite run app/app.py`
+Para iniciar el servidor de desarrollo `Streamlit` en local debemos ejecutar: `streamlit run app/app.py --server.runOnSave true`
