@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -23,11 +25,16 @@ st.title("Visualizador de CSV")
 # Cargar el archivo CSV (reemplaza 'datos.csv' por tu ruta o usa st.file_uploader)
 # df = pd.read_csv("datos.csv")
 
-st.subheader("Elige un archivo para visualizar")
-archivo_subido = st.file_uploader("", type=["csv"])
+# st.subheader("Elige un archivo para visualizar")
+# archivo_subido = st.file_uploader("", type=["csv"])
+
+ARCHIVO = "epi_2025.csv"  # Dataset
+DIRECTORIO = Path(__file__).resolve().parent / "src" / "data" / "processed" / ARCHIVO
+# DIRECTORIO = "/src/data/processed/" + ARCHIVO
+archivo_subido = DIRECTORIO
 
 if archivo_subido is not None:
-    df = pd.read_csv(archivo_subido)
+    df = pd.read_csv(DIRECTORIO)
     st.dataframe(df)
 
     st.subheader("Cantidad de Consultas por Semana Epidemiológica")
