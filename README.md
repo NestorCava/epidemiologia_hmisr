@@ -57,3 +57,16 @@ No se indica el año epidemiológico.
 * La primer semana epidemiológica arranca en el año anterior 2024. Si SEMEPI = 1 y MES = DICIEMBRE, entonces corresponde al año 2024.
 * Este año tuvo 53 semanas epidemiológicas
 * La última semana epidemiológica termina en enero del 2026. Si SEMEPI = 53 y MES = ENERO, entonces corresponde al año 2026.
+
+## Stack Tecnológico
+
+* Python
+* Streamlit
+
+Para el desarrollo se utiliza un entorno virtual, se deja en el archivo [requirement.txt](requirement.txt) la lista de librerias y dependencias externas instaladas. En Windows, las mismas se pueden instalar utilizando este archivo con los comandos:
+
+* Crear entorno virtual: `python -m venv .venv`
+* Activar el entorno virtual: `source .venv\Scripts\activate`
+* Instalar desde requirement: `pip install -r requirements.txt`
+
+Para iniciar el servidor de desarrollo `Streamlit` en local debemos ejecutar: `streamlit run app/app.py --server.runOnSave true`
